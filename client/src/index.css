@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand: #22c55e;
+    --gold: #f59e0b;
+    --dark-bg: #0a0f0d;
+    --card-bg: #111a14;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: #0a0f0d;
+    color: #f0fdf4;
+    font-family: 'DM Sans', sans-serif;
+  }
+
+  ::selection {
+    background: #22c55e33;
+    color: #86efac;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #0a0f0d; }
+  ::-webkit-scrollbar-thumb { background: #243d28; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: #22c55e; }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-400 text-dark-900 font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-lg shadow-brand-500/25 hover:shadow-brand-400/40;
+  }
+
+  .btn-secondary {
+    @apply border border-brand-700 hover:border-brand-500 text-brand-400 hover:text-brand-300 font-medium px-6 py-3 rounded-xl transition-all duration-200 bg-transparent hover:bg-brand-950/50;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-400 text-dark-900 font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-lg shadow-gold-500/25;
+  }
+
+  .card {
+    @apply bg-dark-800 border border-dark-600 rounded-2xl p-6;
+  }
+
+  .card-hover {
+    @apply card hover:border-brand-700 hover:bg-dark-700 transition-all duration-300 cursor-pointer;
+  }
+
+  .input {
+    @apply w-full bg-dark-700 border border-dark-600 rounded-xl px-4 py-3 text-white placeholder-brand-900 focus:outline-none focus:border-brand-500 focus:ring-1 focus:ring-brand-500/30 transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-brand-300 mb-2;
+  }
+
+  .badge-active {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-brand-500/20 text-brand-400 border border-brand-500/30;
+  }
+
+  .badge-warning {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-gold-500/20 text-gold-400 border border-gold-500/30;
+  }
+
+  .badge-error {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-red-500/20 text-red-400 border border-red-500/30;
+  }
+
+  .section-heading {
+    @apply font-display text-3xl md:text-4xl font-bold text-white leading-tight;
+  }
+
+  .stat-card {
+    @apply card flex flex-col gap-2;
+  }
+
+  .number-ball {
+    @apply w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold font-mono;
+  }
+
+  .number-ball-drawn {
+    @apply number-ball bg-brand-500 text-dark-900;
+  }
+
+  .number-ball-matched {
+    @apply number-ball bg-gold-500 text-dark-900;
+  }
+
+  .number-ball-plain {
+    @apply number-ball bg-dark-600 text-brand-300;
+  }
+}
+
+/* Glow effects */
+.glow-green { box-shadow: 0 0 30px rgba(34, 197, 94, 0.15); }
+.glow-gold { box-shadow: 0 0 30px rgba(245, 158, 11, 0.15); }
+
+/* Page transitions */
+.page-enter { animation: fadeIn 0.3s ease-out; }
