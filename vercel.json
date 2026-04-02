@@ -5,7 +5,7 @@
   "installCommand": "npm install && npm install --prefix server",
   "functions": {
     "server/src/index.js": {
-      "runtime": "@vercel/node@3"
+      "runtime": "nodejs20.x"
     }
   },
   "rewrites": [
