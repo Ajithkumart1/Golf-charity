@@ -3,19 +3,15 @@
   "version": "1.0.0",
   "private": true,
   "description": "Golf Charity Subscription Platform — Monorepo",
-  "workspaces": [
-    "client",
-    "server"
-  ],
   "scripts": {
-  "dev": "concurrently \"npm run dev --workspace=server\" \"npm run dev --workspace=client\"",
-  "build": "npm run build --workspace=client",
-  "vercel-build": "npm install --prefix client && npm run build --prefix client"
-},
+    "dev": "concurrently \"cd server && npm run dev\" \"cd client && npm run dev\"",
+    "build": "cd client && npm install && npm run build",
+    "start": "cd server && node src/index.js"
+  },
   "devDependencies": {
     "concurrently": "^8.2.2"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   }
 }
